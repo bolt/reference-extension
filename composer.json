@@ -1,0 +1,25 @@
+{
+    "name": "acme/reference-extension",
+    "description": "This Bolt extension can be used as a starting point to base your own extensions on.",
+    "type": "bolt-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "YourNameHere",
+            "email": "youremail@acme.com"
+        }
+    ],
+    "require-dev": {
+        "bolt/core": "^4.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "AcmeCorp\\ReferenceExtension\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "entrypoint": "AcmeCorp\\ReferenceExtension\\Extension"
+    }
+}

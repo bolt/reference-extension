@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace BobdenOtter\WeatherWidget;
+namespace AcmeCorp\ReferenceExtension;
 
 use Bolt\Extension\BaseExtension;
 
@@ -10,7 +10,7 @@ class Extension extends BaseExtension
 {
     public function getName(): string
     {
-        return 'Dashboard Weather Widget';
+        return 'AcmeCorp ReferenceExtension';
     }
 
     public function initialize(): void

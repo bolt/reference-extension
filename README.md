@@ -1,4 +1,4 @@
-# Bolt Weather Widget
+# Acme ReferenceExtension
 
 Author: YourNameHere
 

@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace BobdenOtter\WeatherWidget;
+namespace AcmeCorp\ReferenceExtension;
 
 use Bolt\Widget\BaseWidget;
 use Bolt\Widget\CacheAware;
@@ -20,7 +20,7 @@ class WeatherWidget extends BaseWidget implements TwigAware, CacheAware, Stopwat
     use CacheTrait;
     use StopwatchTrait;
 
-    protected $name = 'Weather Widget';
+    protected $name = 'AcmeCorp ReferenceWidget';
     protected $target = AdditionalTarget::WIDGET_BACK_DASHBOARD_ASIDE_TOP;
     protected $priority = 200;
     protected $template = '@weather-widget/weather.html.twig';

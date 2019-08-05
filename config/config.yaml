@@ -1,7 +1,3 @@
-# Weather widget configuration file
+# Reference extension configuration file
 
-# Leave the location blank for a guesstimate of your current location. Otherwise
-# Set it to the preferred name of your country / city.
-
-# location: Paris
-location:
+foo: Bar

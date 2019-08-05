@@ -1,5 +1,5 @@
 {
-    "name": "acme/reference-extension",
+    "name": "acmecorp/reference-extension",
     "description": "This Bolt extension can be used as a starting point to base your own extensions on.",
     "type": "bolt-extension",
     "license": "MIT",

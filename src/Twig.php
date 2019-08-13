@@ -36,6 +36,6 @@ class Twig extends AbstractExtension
 
     public function rot13($string): string
     {
-        return str_shuffle($string);
+        return str_rot13($string);
     }
 }

@@ -15,7 +15,9 @@ class Twig extends AbstractExtension
      */
     public function getFunctions(): array
     {
-        $safe = ['is_safe' => ['html']];
+        $safe = [
+            'is_safe' => ['html'],
+        ];
 
         return [
             new TwigFunction('rot13', [$this, 'rot13'], $safe),
@@ -27,7 +29,9 @@ class Twig extends AbstractExtension
      */
     public function getFilters(): array
     {
-        $safe = ['is_safe' => ['html']];
+        $safe = [
+            'is_safe' => ['html'],
+        ];
 
         return [
             new TwigFilter('rot13', [$this, 'rot13'], $safe),

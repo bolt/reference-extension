@@ -19,7 +19,7 @@ First, make sure dependencies are installed:
 COMPOSER_MEMORY_LIMIT=-1 composer update
 ```
 
-And then run ECS and/or PHPStan:
+And then run ECS:
 
 ```
 vendor/bin/ecs check src

@@ -27,5 +27,6 @@ class Extension extends BaseExtension
     {
         $this->registerWidget(new ReferenceWidget());
         $this->registerTwigExtension(new Twig());
+        $this->registerListener('kernel.response', [new EventListener(), 'handleEvent']);
     }
 }

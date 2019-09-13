@@ -13,6 +13,6 @@ class EventListener
         $content = $e->getResponse()->getContent();
         $content .= "\n<!-- It works! -->\n";
 
-        $response->setContent($content);
+        $e->getResponse()->setContent($content);
     }
 }

@@ -21,7 +21,7 @@ class ReferenceWidget extends BaseWidget implements TwigAware, CacheAware, Stopw
     protected $name = 'AcmeCorp ReferenceWidget';
     protected $target = AdditionalTarget::WIDGET_BACK_DASHBOARD_ASIDE_TOP;
     protected $priority = 200;
-    protected $template = '@acmecorp-referencewidget/widget.html.twig';
+    protected $template = '@reference-extension/widget.html.twig';
     protected $zone = RequestZone::BACKEND;
     protected $cacheDuration = -1800;
 }

@@ -8,9 +8,10 @@ use Symfony\Component\HttpKernel\Event\ResponseEvent;
 
 class EventListener
 {
-    public function handleEvent(ResponseEvent $e): void
+    public function handleEvent(ResponseEvent $event): void
     {
-        $content = $e->getResponse()->getContent();
+        $response = $event->getResponse();
+        $content = $response->getContent();
         $content .= "\n<!-- It works! -->\n";
 
         $response->setContent($content);

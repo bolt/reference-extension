@@ -48,7 +48,7 @@ class Extension extends BaseExtension
 
         $this->addTwigNamespace('reference-extension');
 
-        // $this->registerListener('kernel.response', [new EventListener(), 'handleEvent']);
+        $this->registerListener('kernel.response', [new EventListener(), 'handleEvent']);
     }
 
     /**

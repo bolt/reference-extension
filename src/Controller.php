@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace AcmeCorp\ReferenceExtension;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Bolt\Extension\ExtensionController;
 use Symfony\Component\HttpFoundation\Response;
 
-class Controller extends AbstractController
+class Controller extends ExtensionController
 {
     public function index($name = 'foo'): Response
     {

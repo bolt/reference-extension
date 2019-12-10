@@ -44,16 +44,17 @@ class Extension extends BaseExtension
     public function initialize($cli = false): void
     {
         $this->addWidget(new ReferenceWidget());
+
         $this->addTwigExtension(new Twig());
 
         $this->addTwigNamespace('reference-extension');
 
-        $this->registerListener('kernel.response', [new EventListener(), 'handleEvent']);
+        $this->addListener('kernel.response', [new EventListener(), 'handleEvent']);
     }
 
     /**
      * Ran automatically, if the current request is from the command line (CLI).
-     * You can use this method to set up things in you extension.
+     * You can use this method to set up things in your extension.
      *
      * Note: This runs on every request. Make sure what happens here is quick
      * and efficient.

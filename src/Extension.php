@@ -45,8 +45,6 @@ class Extension extends BaseExtension
     {
         $this->addWidget(new ReferenceWidget());
 
-        $this->addTwigExtension(new Twig());
-
         $this->addTwigNamespace('reference-extension');
 
         $this->addListener('kernel.response', [new EventListener(), 'handleEvent']);

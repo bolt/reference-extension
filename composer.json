@@ -23,8 +23,5 @@
         }
     },
     "minimum-stability": "dev",
-    "prefer-stable": true,
-    "extra": {
-        "entrypoint": "AcmeCorp\\ReferenceExtension\\Extension"
-    }
+    "prefer-stable": true
 }

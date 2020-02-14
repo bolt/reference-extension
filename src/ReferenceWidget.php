@@ -5,15 +5,15 @@ declare(strict_types=1);
 namespace AcmeCorp\ReferenceExtension;
 
 use Bolt\Widget\BaseWidget;
-use Bolt\Widget\CacheAware;
+use Bolt\Widget\CacheAwareInterface;
 use Bolt\Widget\CacheTrait;
 use Bolt\Widget\Injector\AdditionalTarget;
 use Bolt\Widget\Injector\RequestZone;
-use Bolt\Widget\StopwatchAware;
+use Bolt\Widget\StopwatchAwareInterface;
 use Bolt\Widget\StopwatchTrait;
-use Bolt\Widget\TwigAware;
+use Bolt\Widget\TwigAwareInterface;
 
-class ReferenceWidget extends BaseWidget implements TwigAware, CacheAware, StopwatchAware
+class ReferenceWidget extends BaseWidget implements TwigAwareInterface, CacheAwareInterface, StopwatchAwareInterface
 {
     use CacheTrait;
     use StopwatchTrait;

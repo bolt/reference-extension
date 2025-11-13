@@ -23,7 +23,7 @@ class Extension extends BaseExtension
      * Note: This runs on every request. Make sure what happens here is quick
      * and efficient.
      */
-    public function initialize($cli = false): void
+    public function initialize(): void
     {
         $this->addWidget(new ReferenceWidget());
 

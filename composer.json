@@ -15,6 +15,7 @@
     },
     "require-dev": {
         "bolt/core": "^4.1",
+        "rector/rector": "2.2.7",
         "symplify/easy-coding-standard": "^13"
     },
     "autoload": {

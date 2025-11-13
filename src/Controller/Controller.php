@@ -13,7 +13,7 @@ use Twig\Environment;
 class Controller extends ExtensionController
 {
     #[Route('/extensions/reference/{name}', name: 'extension_reference')]
-    public function index($name = 'foo', ?Sanitiser $sanitiser = null, ?Environment $twig = null): Response
+    public function index(string $name = 'foo', ?Sanitiser $sanitiser = null, ?Environment $twig = null): Response
     {
         $context = [
             'title' => 'AcmeCorp Reference Extension',

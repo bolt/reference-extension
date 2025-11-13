@@ -20,7 +20,7 @@ class Twig extends AbstractExtension
         ];
 
         return [
-            new TwigFunction('rot13', [$this, 'rot13'], $safe),
+            new TwigFunction('rot13', $this->rot13(...), $safe),
         ];
     }
 
@@ -34,11 +34,11 @@ class Twig extends AbstractExtension
         ];
 
         return [
-            new TwigFilter('rot13', [$this, 'rot13'], $safe),
+            new TwigFilter('rot13', $this->rot13(...), $safe),
         ];
     }
 
-    public function rot13($string): string
+    public function rot13(string $string): string
     {
         return str_rot13($string);
     }

@@ -6,6 +6,14 @@ on:
     branches:
       - main
 
+permissions:
+  contents: read
+
+# A newer push to the same branch or pull request makes the older run moot.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 env:
   COMPOSER_CACHE_DIR: /tmp/composer-cache
 
@@ -13,15 +21,16 @@ jobs:
   rector_analysis:
     name: Rector analysis
     runs-on: ubuntu-latest
+    env:
+      PHP_VERSION: 8.4
     steps:
       - uses: actions/checkout@v4
 
       - uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.4
+          php-version: ${{ env.PHP_VERSION }}
           extensions: json, mbstring, pdo, curl, pdo_sqlite
           coverage: none
-          tools: symfony-cli
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -29,7 +38,7 @@ jobs:
         uses: actions/cache@v4
         with:
           path: ${{ env.COMPOSER_CACHE_DIR }}
-          key: ${{ runner.os }}-${{ matrix.php-version }}-${{ hashFiles('**/composer.json') }}
+          key: ${{ runner.os }}-${{ env.PHP_VERSION }}-${{ hashFiles('**/composer.json') }}
       - run: composer install --no-progress --no-interaction
 
       - run: vendor/bin/rector process -n --no-progress-bar --ansi
@@ -38,7 +47,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        php-version: [ '8.2', '8.3', '8.4' ]
+        php-version: [ '8.2', '8.3', '8.4', '8.5' ]
         actions:
           - name: Coding Standard
             # tip: add "--ansi" to commands in CI to make them full of colors
@@ -62,7 +71,6 @@ jobs:
           php-version: ${{ matrix.php-version }}
           extensions: json, mbstring, pdo, curl, pdo_sqlite
           coverage: none
-          tools: symfony-cli
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
